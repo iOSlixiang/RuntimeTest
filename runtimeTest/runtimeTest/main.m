@@ -6,13 +6,16 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "ExampleList.h"
+#import "LogAllClass.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         ExampleList *example = [[ExampleList alloc]init];
         [example startMethod];
         
+        [LogAllClass startMethod];
     }
     return 0;
      

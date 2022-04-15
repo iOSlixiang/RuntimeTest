@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5761504228095DA500A0D74E /* LogAllClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5761504128095DA500A0D74E /* LogAllClass.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		576D03E42807EF82004352C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 576D03E32807EF82004352C2 /* main.m */; };
 		576D03EF2807F15D004352C2 /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 576D03EE2807F15D004352C2 /* MyClass.m */; };
 		576D03F22807F168004352C2 /* MySubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 576D03F12807F168004352C2 /* MySubClass.m */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5761504028095DA500A0D74E /* LogAllClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogAllClass.h; sourceTree = "<group>"; };
+		5761504128095DA500A0D74E /* LogAllClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogAllClass.m; sourceTree = "<group>"; };
 		576D03E02807EF82004352C2 /* runtimeTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = runtimeTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		576D03E32807EF82004352C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		576D03ED2807F15D004352C2 /* MyClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyClass.h; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 				576D03EE2807F15D004352C2 /* MyClass.m */,
 				576D03F02807F168004352C2 /* MySubClass.h */,
 				576D03F12807F168004352C2 /* MySubClass.m */,
+				5761504028095DA500A0D74E /* LogAllClass.h */,
+				5761504128095DA500A0D74E /* LogAllClass.m */,
 			);
 			path = runtimeTest;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 				576D03EF2807F15D004352C2 /* MyClass.m in Sources */,
 				576D03F22807F168004352C2 /* MySubClass.m in Sources */,
 				576D03E42807EF82004352C2 /* main.m in Sources */,
+				5761504228095DA500A0D74E /* LogAllClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

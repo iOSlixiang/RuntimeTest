@@ -27,6 +27,8 @@
     [self logClassInfo];
     [self runtimeNewClass];
     
+    [self runtimeNewInstance];
+     
 }
 #pragma mark - 打印类信息
 -(void)logClassInfo{
@@ -101,12 +103,13 @@
     NSLog(@"MyClass is%@ responsed to protocol %s", class_conformsToProtocol(cls, protocol) ? @"" : @" not", protocol_getName(protocol));
     NSLog(@"==========================================================");
 }
-#pragma mark - 运行时新建
+#pragma mark -  动态创建 类
 // 自定义一个方法
 void sayFunction(id self, SEL _cmd, id some) {
+    NSLog(@"%s",__func__);
     NSLog(@"%@岁的%@说：%@", object_getIvar(self, class_getInstanceVariable([self class], "_age")),[self valueForKey:@"name"],some);
 }
--(void)runtimeNewClass {
+-(void)runtimeCreate {
     // 动态创建对象 创建一个Person 继承自 NSObject类
     Class People = objc_allocateClassPair([NSObject class], "Person", 0);
     
@@ -142,4 +145,83 @@ void sayFunction(id self, SEL _cmd, id some) {
     // 销毁类
     objc_disposeClassPair(People);
 }
+void submethod(Class cla, SEL _cmd) {
+    NSLog(@"%s",__func__);
+   
+}
+void method1(id self, SEL _cmd) {
+    NSLog(@"%s",__func__);
+    NSLog(@"%@", object_getIvar(self, class_getInstanceVariable([self class], "_ivar1")));
+}
+-(void)runtimeNewClass{
+ 
+    Class cls = objc_allocateClassPair(MyClass.class, "MySubClass1", 0);
+    SEL subSel = @selector(submethod1);
+    class_addMethod(cls, subSel, (IMP)submethod, "v@:");
+    class_replaceMethod(cls, @selector(method1), (IMP)method1, "v@:");
+  
+    class_addIvar(cls, "_ivar1", sizeof(NSString *), log(sizeof(NSString *)),  "ivar_getTypeEncoding");
+ 
+    objc_property_attribute_t type = {"T", "@\"NSString\""};
+    objc_property_attribute_t ownership = { "C", "" };
+    objc_property_attribute_t backingivar = { "V", "_backingivar"};
+    objc_property_attribute_t attrs[] = {type, ownership, backingivar};
+    class_addProperty(cls, "property2", attrs, 3);
+    
+    objc_registerClassPair(cls);
+   
+    
+    id instance = [[cls alloc] init];
+    
+
+    [instance setValue:@"苍老师" forKey:@"ivar1"];
+
+    Ivar ageIvar = class_getInstanceVariable(cls, "_ivar1");
+    object_setIvar(instance, ageIvar, @"3");
+    NSLog(@"instance value object_getIvar: %@ ", object_getIvar(instance, ageIvar));
+    
+    [instance performSelector:subSel];
+    [instance performSelector:@selector(method1)];
+     
+    // 属性操作
+    unsigned int outCount = 0;
+    objc_property_t * properties = class_copyPropertyList(cls, &outCount);
+    for (int i = 0; i < outCount; i++) {
+        objc_property_t property = properties[i];
+        NSLog(@"property's name: %s", property_getName(property));
+        NSLog(@"property's name: %s", property_getAttributes(property));
+   
+    }
+    free(properties);
+    
+    objc_property_t array = class_getProperty(cls, "property2");
+    if (array != NULL) {
+        NSLog(@"property value %s", property_getName(array));
+    }
+    
+    // 成员变量
+    Ivar *ivars = class_copyIvarList(cls, &outCount);
+    for (int i = 0; i < outCount; i++) {
+        Ivar ivar = ivars[i];
+        NSLog(@"instance name: %s ", ivar_getName(ivar));
+        // 初始化是的成员变量
+        NSLog(@"instance value: %s ", ivar_getTypeEncoding(ivar));
+        //当前实例 的成员变量
+        NSLog(@"instance value: %@ ", object_getIvar(instance, ivar));
+        
+    }
+    free(ivars);
+}
+#pragma mark - 动态创建 实例
+-(void)runtimeNewInstance{
+ 
+    id theObject = class_createInstance(NSString.class, sizeof(unsigned));
+     
+    id str1 = [theObject init];
+    NSLog(@"%@", [str1 class]);
+    id str2 = [[NSString alloc] initWithString:@"test"];
+    NSLog(@"%@", [str2 class]);
+}
+
+
 @end
