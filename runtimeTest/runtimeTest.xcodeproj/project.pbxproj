@@ -12,6 +12,7 @@
 		576D03EF2807F15D004352C2 /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 576D03EE2807F15D004352C2 /* MyClass.m */; };
 		576D03F22807F168004352C2 /* MySubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 576D03F12807F168004352C2 /* MySubClass.m */; };
 		576D03F528082DA9004352C2 /* ExampleList.m in Sources */ = {isa = PBXBuildFile; fileRef = 576D03F428082DA9004352C2 /* ExampleList.m */; };
+		5776749B2814F7E700585B95 /* MyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5776749A2814F7E700585B95 /* MyObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		576D03F12807F168004352C2 /* MySubClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySubClass.m; sourceTree = "<group>"; };
 		576D03F328082DA9004352C2 /* ExampleList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleList.h; sourceTree = "<group>"; };
 		576D03F428082DA9004352C2 /* ExampleList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleList.m; sourceTree = "<group>"; };
+		577674992814F7E700585B95 /* MyObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyObject.h; sourceTree = "<group>"; };
+		5776749A2814F7E700585B95 /* MyObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 				576D03F12807F168004352C2 /* MySubClass.m */,
 				5761504028095DA500A0D74E /* LogAllClass.h */,
 				5761504128095DA500A0D74E /* LogAllClass.m */,
+				577674992814F7E700585B95 /* MyObject.h */,
+				5776749A2814F7E700585B95 /* MyObject.m */,
 			);
 			path = runtimeTest;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			files = (
 				576D03F528082DA9004352C2 /* ExampleList.m in Sources */,
 				576D03EF2807F15D004352C2 /* MyClass.m in Sources */,
+				5776749B2814F7E700585B95 /* MyObject.m in Sources */,
 				576D03F22807F168004352C2 /* MySubClass.m in Sources */,
 				576D03E42807EF82004352C2 /* main.m in Sources */,
 				5761504228095DA500A0D74E /* LogAllClass.m in Sources */,

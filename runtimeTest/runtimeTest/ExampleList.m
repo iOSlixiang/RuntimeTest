@@ -8,6 +8,7 @@
 #import "ExampleList.h"
 #import "MyClass.h"
 #import "MySubClass.h"
+#import "MyObject.h"
 
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -24,11 +25,12 @@
 }
 
 -(void)startMethod{
-    [self logClassInfo];
-    [self runtimeNewClass];
-    
-    [self runtimeNewInstance];
+//    [self logClassInfo];
+//    [self runtimeNewClass];
+//
+//    [self runtimeNewInstance];
      
+    [self runtimeMyObject];
 }
 #pragma mark - 打印类信息
 -(void)logClassInfo{
@@ -219,9 +221,24 @@ void method1(id self, SEL _cmd) {
      
     id str1 = [theObject init];
     NSLog(@"%@", [str1 class]);
-    id str2 = [[NSString alloc] initWithString:@"test"];
+    id str2 = @"test";
     NSLog(@"%@", [str2 class]);
 }
 
+#pragma mark - 动态解析 dic
+-(void)runtimeMyObject{
+    
+    
+    MyObject *object = [[MyObject alloc]init];
+    
+    object.dataWithDic = @{@"name1": @"张三", @"status1": @"star"};
+    
+    NSLog(@"%@ -- %@",object.name,object.status);
+    
+    object.dataWithDic = @{@"name2": @"张三", @"status2": @"end"};
+    
+    NSLog(@"%@ -- %@",object.name,object.status);
+    
+}
 
 @end

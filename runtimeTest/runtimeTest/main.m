@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
         ExampleList *example = [[ExampleList alloc]init];
         [example startMethod];
         
-        [LogAllClass startMethod];
+//        [LogAllClass startMethod];
     }
     return 0;
      
