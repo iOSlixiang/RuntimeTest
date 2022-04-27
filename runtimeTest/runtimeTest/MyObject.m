@@ -37,4 +37,8 @@ static NSMutableDictionary *map = nil;
 -(NSString *)propertyForKey:(NSString *)key{
     return map[key];
 }
+- (void)sing{
+    
+    NSLog(@"接受者重定向 :%s",__func__);
+}
 @end

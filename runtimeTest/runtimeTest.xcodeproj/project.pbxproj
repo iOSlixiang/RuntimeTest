@@ -13,6 +13,8 @@
 		576D03F22807F168004352C2 /* MySubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 576D03F12807F168004352C2 /* MySubClass.m */; };
 		576D03F528082DA9004352C2 /* ExampleList.m in Sources */ = {isa = PBXBuildFile; fileRef = 576D03F428082DA9004352C2 /* ExampleList.m */; };
 		5776749B2814F7E700585B95 /* MyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5776749A2814F7E700585B95 /* MyObject.m */; };
+		57BEC013281793F600E6BBC4 /* MyMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BEC012281793F600E6BBC4 /* MyMessage.m */; };
+		57BEC0192817E21100E6BBC4 /* MyClass+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BEC0182817E21100E6BBC4 /* MyClass+Category.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +42,10 @@
 		576D03F428082DA9004352C2 /* ExampleList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleList.m; sourceTree = "<group>"; };
 		577674992814F7E700585B95 /* MyObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyObject.h; sourceTree = "<group>"; };
 		5776749A2814F7E700585B95 /* MyObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyObject.m; sourceTree = "<group>"; };
+		57BEC011281793F600E6BBC4 /* MyMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMessage.h; sourceTree = "<group>"; };
+		57BEC012281793F600E6BBC4 /* MyMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyMessage.m; sourceTree = "<group>"; };
+		57BEC0172817E21100E6BBC4 /* MyClass+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyClass+Category.h"; sourceTree = "<group>"; };
+		57BEC0182817E21100E6BBC4 /* MyClass+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MyClass+Category.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,14 +81,18 @@
 				576D03E32807EF82004352C2 /* main.m */,
 				576D03F328082DA9004352C2 /* ExampleList.h */,
 				576D03F428082DA9004352C2 /* ExampleList.m */,
-				576D03ED2807F15D004352C2 /* MyClass.h */,
-				576D03EE2807F15D004352C2 /* MyClass.m */,
-				576D03F02807F168004352C2 /* MySubClass.h */,
-				576D03F12807F168004352C2 /* MySubClass.m */,
 				5761504028095DA500A0D74E /* LogAllClass.h */,
 				5761504128095DA500A0D74E /* LogAllClass.m */,
+				576D03ED2807F15D004352C2 /* MyClass.h */,
+				576D03EE2807F15D004352C2 /* MyClass.m */,
+				57BEC0172817E21100E6BBC4 /* MyClass+Category.h */,
+				57BEC0182817E21100E6BBC4 /* MyClass+Category.m */,
+				576D03F02807F168004352C2 /* MySubClass.h */,
+				576D03F12807F168004352C2 /* MySubClass.m */,
 				577674992814F7E700585B95 /* MyObject.h */,
 				5776749A2814F7E700585B95 /* MyObject.m */,
+				57BEC011281793F600E6BBC4 /* MyMessage.h */,
+				57BEC012281793F600E6BBC4 /* MyMessage.m */,
 			);
 			path = runtimeTest;
 			sourceTree = "<group>";
@@ -146,6 +156,8 @@
 			files = (
 				576D03F528082DA9004352C2 /* ExampleList.m in Sources */,
 				576D03EF2807F15D004352C2 /* MyClass.m in Sources */,
+				57BEC0192817E21100E6BBC4 /* MyClass+Category.m in Sources */,
+				57BEC013281793F600E6BBC4 /* MyMessage.m in Sources */,
 				5776749B2814F7E700585B95 /* MyObject.m in Sources */,
 				576D03F22807F168004352C2 /* MySubClass.m in Sources */,
 				576D03E42807EF82004352C2 /* main.m in Sources */,

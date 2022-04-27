@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSDictionary *dataWithDic;
 
+- (void)sing;
 @end
 
 NS_ASSUME_NONNULL_END

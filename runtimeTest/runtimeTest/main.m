@@ -16,6 +16,7 @@ int main(int argc, const char * argv[]) {
         [example startMethod];
         
 //        [LogAllClass startMethod];
+    
     }
     return 0;
      

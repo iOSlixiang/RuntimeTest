@@ -35,10 +35,11 @@
  
  
     NSLog(@"====================== allClassName ====================================");
-    [cangTeacher allCopyClassList];
+    [LogAllClass allCopyClassList];
+ 
 }
 #pragma mark - 获取所有注册的类
--(void)allCopyClassList{
++(void)allCopyClassList{
     unsigned int outCount;
     Class *classes = objc_copyClassList(&outCount);
     for (int i = 0; i < outCount; i++) {
@@ -47,7 +48,7 @@
     free(classes);
     NSLog(@"number of classes: %d", outCount);
 }
--(void)allClassName{
++(void)allClassName{
     
     int numClasses;
     Class * classes = NULL;

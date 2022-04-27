@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)method1;
 - (void)method2;
 + (void)classMethod1;
+
++(void)categoryMethod;
+
 @end
 
 NS_ASSUME_NONNULL_END

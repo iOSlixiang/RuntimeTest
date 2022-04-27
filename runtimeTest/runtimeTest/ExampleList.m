@@ -9,6 +9,7 @@
 #import "MyClass.h"
 #import "MySubClass.h"
 #import "MyObject.h"
+#import "MyMessage.h"
 
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -20,18 +21,25 @@
 -(instancetype)init{
     if (self = [super init]) {
         NSLog(@"%s",__func__);
+        
+        SEL sel1 = @selector(startMethod);
+        NSLog(@"sel : %p", sel1);
     }
     return self;
 }
 
 -(void)startMethod{
-//    [self logClassInfo];
-//    [self runtimeNewClass];
-//
-//    [self runtimeNewInstance];
+    [self logClassInfo];
+    [self runtimeNewClass];
+
+    [self runtimeNewInstance];
      
     [self runtimeMyObject];
+    
+    [self performSelector:@selector(messageForwarding)];
+    
 }
+ 
 #pragma mark - 打印类信息
 -(void)logClassInfo{
     MyClass *myClass = [[MyClass alloc] init];
@@ -104,6 +112,8 @@
     }
     NSLog(@"MyClass is%@ responsed to protocol %s", class_conformsToProtocol(cls, protocol) ? @"" : @" not", protocol_getName(protocol));
     NSLog(@"==========================================================");
+    
+    [MyClass categoryMethod];
 }
 #pragma mark -  动态创建 类
 // 自定义一个方法
@@ -227,17 +237,26 @@ void method1(id self, SEL _cmd) {
 
 #pragma mark - 动态解析 dic
 -(void)runtimeMyObject{
-    
-    
+
+
     MyObject *object = [[MyObject alloc]init];
-    
+
     object.dataWithDic = @{@"name1": @"张三", @"status1": @"star"};
-    
+
     NSLog(@"%@ -- %@",object.name,object.status);
-    
+
     object.dataWithDic = @{@"name2": @"张三", @"status2": @"end"};
-    
+
     NSLog(@"%@ -- %@",object.name,object.status);
+
+}
+#pragma mark - 消息转发
+- (void)messageForwarding{
+    
+    MyMessage *example = [[MyMessage alloc] init];
+    example.name = @"苍老师";
+    [example sing];
+
     
 }
 
